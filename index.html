@@ -5,9 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Monitor</title>
-    <link rel="stylesheet" href="./index.html">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/75ddabf527.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <script src="./script.js"></script>
+    <div class="container">
+        <div class="display">
+            <div class="notFound hidden">
+                <span>Location not found. Please search for another Location.</span>
+            </div>
+            <div class="temperatureDiv">
+                <div class="giph"><iframe src="https://giphy.com/embed/mFSlq2cgOGCnp3jkdo" frameBorder="0" class="giphy-embed"></iframe></div>
+                <div class="dispTemp"><span  class="temperatureInNumber">33</span>&#8451;</div>
+            </div>
+            <div class="weatherType">Mostly Cloudy</div>
+            <div class="locationDateTime">
+                <div><i class="fas fa-map-marker-alt"></i></div>
+                <div class="locationContainer">
+                    <div class="location">Rajendra Nagar</div>
+                    <div class="dateTime">Tue, 28 June 2022 6:09 PM</div>
+                </div>
+            </div>
+        </div>
+        <div class="locationQuery">
+            <input type="text" placeholder="Enter Search Location" class="cityName">
+            <button class="btnGo">Go</button>
+        </div>
+    </div>
+    
+    <script src="./dist/main.js" type="module"></script>
 </body>
 </html>

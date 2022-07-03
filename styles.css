@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Shadows+Into+Light&display=swap');
+
+*, *:before, *:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("./static/images/sally-lR96g3H5VmA-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+
+    height: 80%;
+    min-height: 500px;
+    width: 30%;
+    min-width: 400px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+.notFound {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+}
+
+.locationQuery {
+    margin-top: 10px; 
+}
+
+.locationQuery input {
+    min-width: 200px;
+    max-width: 300px;
+    font-size: 1.3rem;
+    padding: 3px;
+}
+
+.temperatureDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.giph iframe {
+    width: 3rem;
+}
+
+.dispTemp {
+    color: white;
+    font-size: 3rem;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.weatherType {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.3rem;
+    font-family: 'Shadows Into Light', cursive;
+    color: white;
+}
+
+.locationDateTime {
+    margin-top: auto;
+    margin-bottom: 50px;
+    font-size: 1.4rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
