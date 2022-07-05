@@ -27,10 +27,11 @@ async function getWeatherData(city) {
 }
 
 let tempDisp = document.querySelector(".temperatureInNumber");
-let giph = document.querySelector(".giph");
+let giphImg = document.querySelector(".giphImg");
 let weatherType = document.querySelector(".weatherType");
 let location = document.querySelector(".location");
 let dateTime = document.querySelector(".dateTime");
+let container = document.querySelector(".container");
 
 
 let cityInput = document.querySelector(".cityName");
@@ -84,6 +85,65 @@ function setToday (data) {
 }
 
 
+function changeBgImage (dataIcon) {
+    switch (dataIcon) {
+        case "01n":
+            container.style.backgroundImage = "url('./static/images/clearSky.jpg')";
+            break;
+        case "02n":
+            container.style.backgroundImage = "url('./static/images/fewClouds.jpg')";
+            break;
+        case "03n":
+            container.style.backgroundImage = "url('./static/images/scatteredClouds.jpg')";
+            break;
+        case "04n":
+            container.style.backgroundImage = "url('./static/images/brokenClouds.jpg')";
+            break;
+        case "09n":
+            container.style.backgroundImage = "url('./static/images/showerRain.jpg')";
+            break;
+        case "10n":
+            container.style.backgroundImage = "url('./static/images/rain.jpg')";
+            break;
+        case "11n":
+            container.style.backgroundImage = "url('./static/images/thunderstorm.jpg')";
+            break;
+        case "13n":
+            container.style.backgroundImage = "url('./static/images/snow.jpg')";
+            break;
+        case "50n":
+            container.style.backgroundImage = "url('./static/images/mist.jpg')";
+            break;
+        case "01d":
+            container.style.backgroundImage = "url('./static/images/clearSky.jpg')";
+            break;
+        case "02d":
+            container.style.backgroundImage = "url('./static/images/fewClouds.jpg')";
+            break;
+        case "03d":
+            container.style.backgroundImage = "url('./static/images/scatteredClouds.jpg')";
+            break;
+        case "04d":
+            container.style.backgroundImage = "url('./static/images/brokenClouds.jpg')";
+            break;
+        case "09d":
+            container.style.backgroundImage = "url('./static/images/showerRain.jpg')";
+            break;
+        case "10d":
+            container.style.backgroundImage = "url('./static/images/rain.jpg')";
+            break;
+        case "11d":
+            container.style.backgroundImage = "url('./static/images/thunderstorm.jpg')";
+            break;
+        case "13d":
+            container.style.backgroundImage = "url('./static/images/snow.jpg')";
+            break;
+        case "50d":
+            container.style.backgroundImage = "url('./static/images/mist.jpg')";
+            break;
+    }
+}
+
 
 function displayData(data) {
     location.innerText = data.name;
@@ -91,6 +151,9 @@ function displayData(data) {
     let temp = Math.round(Number(data.main.temp));
     tempDisp.innerText = temp;
     weatherType.innerText = data.weather[0].description;
+    let dataIcon = data.weather[0].icon;
+    giphImg.src = `http://openweathermap.org/img/wn/${dataIcon}@2x.png`;
+    changeBgImage(dataIcon);
 }
 
 
