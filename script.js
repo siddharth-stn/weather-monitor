@@ -16,7 +16,7 @@ function reset () {
 }
 
 async function getWeatherData(city) {
-    let source_address = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=acb49f75e87e8a21de203154f0da8854&units=metric`;
+    let source_address = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=acb49f75e87e8a21de203154f0da8854&units=metric`;
     const response = await fetch(source_address, {mode: "cors"})
     if (response.status !== 200) {
         handleError();
@@ -152,7 +152,7 @@ function displayData(data) {
     tempDisp.innerText = temp;
     weatherType.innerText = data.weather[0].description;
     let dataIcon = data.weather[0].icon;
-    giphImg.src = `http://openweathermap.org/img/wn/${dataIcon}@2x.png`;
+    giphImg.src = `https://openweathermap.org/img/wn/${dataIcon}@2x.png`;
     changeBgImage(dataIcon);
 }
 
